@@ -53,5 +53,6 @@ $.ajax({
     console.log(resp); 
     console.log(resp.main);
     console.log(resp.main.temp);
-    alert("Helsinki today " + resp.main.temp  + " feels like " + resp.main.feels_like  + ".");
+   /* alert("Helsinki today " + resp.main.temp  + " feels like " + resp.main.feels_like  + ".");*/
+    $(".weather-btn").text("Helsinki today is:" + resp.main.temp  + " feels like " + resp.main.feels_like  + ".");
 });
