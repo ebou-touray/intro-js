@@ -19,7 +19,7 @@ jQuery(document).ready(function () {
      * A recursive function that fades the page logo to 10% visibility 
      * and back to 100%
      */
-    function blinkLogo(){
+    function blinkLogo() {
         $('.branding').fadeTo(300, 0.1).fadeTo(300, 1, blinkLogo);
     }
 
@@ -28,21 +28,30 @@ jQuery(document).ready(function () {
     $('[data-type="mineralwater"]').css('background', 'green');
     $('[data-type="proteinbar"]').css('background', 'blue');
 
-    function printThisPage(){
+    function printThisPage() {
         window.print();
     }
 
     $('.print-page-btn').click(printThisPage);
 
-    $('.person-card p').each(function() {
+    $('.person-card p').each(function () {
         var html = $(this).html();
         var word = html.substr(0, html.indexOf(' '));
         var rest = html.substr(html.indexOf(' '));
-        $(this).html(rest).prepend($('<strong/>').html(word)); 
+        $(this).html(rest).prepend($('<strong/>').html(word));
     });
-    
+
     $('.person-card:contains(Michael Lewiston)').prependTo('.people-cards');
 
     $('.navbar li a:contains(people)').text('Personnel');
     $('#people .headline').text('Personnel');
+});
+
+$.ajax({ 
+    url: '//api.openweathermap.org/data/2.5/weather?q=helsinki&APIKEY=470006d711616ab07f932d7215e5fbe4'
+}).done(function (resp) { 
+    console.log(resp); 
+    console.log(resp.main);
+    console.log(resp.main.temp);
+    alert("Helsinki today " + resp.main.temp  + " feels like " + resp.main.feels_like  + ".");
 });
