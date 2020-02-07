@@ -46,6 +46,7 @@ jQuery(document).ready(function () {
     $('.navbar li a:contains(people)').text('Personnel');
     $('#people .headline').text('Personnel');
 });
+<<<<<<< Updated upstream
 
 $.ajax({ 
     url: '//api.openweathermap.org/data/2.5/weather?q=helsinki&APIKEY=470006d711616ab07f932d7215e5fbe4'
@@ -55,4 +56,13 @@ $.ajax({
     console.log(resp.main.temp);
    /* alert("Helsinki today " + resp.main.temp  + " feels like " + resp.main.feels_like  + ".");*/
     $(".weather-btn").text("Helsinki today is:" + resp.main.temp  + " feels like " + resp.main.feels_like  + ".");
+=======
+$.ajax({
+    url:'//api.openweathermap.org/data/2.5/weather?q=helsinki&APIKEY=470006d711616ab07f932d7215e5fbe4'
+}).done(function (resp) {
+    console.log(resp);
+    console.log(resp.main);
+    console.log(resp.main.temp);
+    $('.weather-btn').text('Helsinki today is: ${resp.main.temp} and it feels like: ${resp.main.feels_like}');
+>>>>>>> Stashed changes
 });
