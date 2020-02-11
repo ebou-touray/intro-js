@@ -43,4 +43,33 @@ function doAjaxCall(searchTerm) {
         paramsForFlickr,
         handleResponse
     );
-}
+    $(document).ready(function(){
+$('[name = "searchbutton"]').click(function(){
+    console.lpg('User has entered:' + document.searchBar.searchQuery.value);
+
+    $.ajax({
+        url: 'api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?',
+        dataType: 'json',
+        data:{   
+            tags: document.searchBar.searchQuery.value,
+            tagmode: 'all',
+            ormat: 'json',  
+}       }
+    }).done(function(data){
+        console.log(data);
+        $('#imageWrapper').empty();
+        data.items.forEach(function(item)){
+
+            $('#imageWrapper').append(
+            <div> class ="col-md-3 col-sm-4 col-xs-6">
+                <img class ="img-rsponsive" src= "${item.media.m}">
+                </img>
+            </div>
+
+            }); 
+    }}       
+ });
+
+
+
+
