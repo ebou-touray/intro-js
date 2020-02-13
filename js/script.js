@@ -13,9 +13,9 @@ function movearms() {
     minuteArmPosition = tick * min + (sec / 60) * tick;
   hourArmPosition = tick * 5 * hr + (min / 60) * tick * 5;
 
-  var deltaSec = (360 / 60) * sec, //mangle moved per second
-    deltaMin = (360 / 60) * min,
-    deltaHr = (360 / 60) * hr;
+  var deltaSec = (360 / 60) * sec, //angle moved per second
+    deltaMin = (360 / 60) * min, // angle moved per minute
+    deltaHr = (360 / 60) * hr; // anle moved per hour
 
   var HOURHAND = document.querySelector("#hour"),
     MINUTEHAND = document.querySelector("#minute"),
