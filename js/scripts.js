@@ -54,10 +54,10 @@ $.ajax({
   url:
     "//api.openweathermap.org/data/2.5/weather?q=helsinki&APPID=470006d711616ab07f932d7215e5fbe4"
 }).done(function(resp) {
-  //   console.log(resp);
-  //   console.log(resp);
-  //   console.log(resp.main);
-  //   console.log(resp.main.temp);
+  console.log(resp);
+  console.log(resp);
+  console.log(resp.main);
+  console.log(resp.main.temp);
   $(".weather-btn").text(
     `Helsinki today is: ${resp.main.temp} and it feels like: ${resp.main.feels_like}`
   );
