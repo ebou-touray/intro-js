@@ -10,8 +10,8 @@ function movearms() {
     tick = 360 / 60; //angle of 1 tick
 
   var secondArmPosition = tick * sec,
-    minuteArmPosition = tick * min + (sec / 60) * tick;
-  hourArmPosition = tick * 5 * hr + (min / 60) * tick * 5;
+    minuteArmPosition = tick * min + (sec / 60) * tick,
+    hourArmPosition = tick * 5 * hr + (min / 60) * tick * 5;
 
   var deltaSec = (360 / 60) * sec, //angle moved per second
     deltaMin = (360 / 60) * min, // angle moved per minute
