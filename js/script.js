@@ -26,12 +26,9 @@ function movearms() {
     minuteArmPosition += tick / 60; // minte arem moves extra 6/60 deg every minute
     hourArmPosition += tick / 60 / 60; // hour arm moves extra 6/60/60 deg every every hour
 
-    SECONDHAND.getElementsByClassName.transform =
-      "rotate(" + secondArmPosition + "deg)";
-    HOURHAND.getElementsByClassName.transform =
-      "rotate(" + minuteArmPosition + "deg)";
-    MINUTEHAND.getElementsByClassName.transform =
-      "rotate(" + minuteArmPosition + "deg)";
+    SECONDHAND.style.transform = "rotate(" + secondArmPosition + "deg)";
+    HOURHAND.style.transform = "rotate(" + minuteArmPosition + "deg)";
+    MINUTEHAND.style.transform = "rotate(" + hourArmPosition + "deg)";
   }
   update();
   setInterval(update, 1000);
